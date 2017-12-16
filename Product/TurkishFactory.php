@@ -19,12 +19,9 @@ class TurkishFactory extends ProductFactory
 
 				return $cloth;
 			case parent::SERVICE:
-				$service = new Coffee();
-				$service->setBrand('white');
-
-				return $service;
+				return new Coffee();
 			default:
-				throw new \InvalidArgumentException("$type in not valid.");
+				throw new \InvalidArgumentException("$type is not valid.");
 				break;
 		}
 	}
