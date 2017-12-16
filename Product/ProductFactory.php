@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Product;
+namespace myDesignPattern\Product;
 
 abstract class ProductFactory
 {

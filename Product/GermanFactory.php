@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Product;
+namespace myDesignPattern\Product;
 
 class GermanFactory extends ProductFactory
 {
@@ -9,25 +9,27 @@ class GermanFactory extends ProductFactory
 	{
 		switch ($type) {
 			case parent::CAR:
-				$car = new Car();
+				$car = new Mercedes();
 				$car->setColor('black');
-				$car->setBrand('Mercedes');
 
 				return $car;
 			case parent::CLOTH:
-				$cloth = new Cloth();
+				$cloth = new Jean();
 				$cloth->setColor('red');
-				$cloth->setBrand('GAP');
 
 				return $cloth;
 			case parent::SERVICE:
-				$service = new Service();
-				$service->setBrand('AWS');
+				$service = new Coffee();
+				$service->setBrand('white');
 
 				return $service;
 			default:
 				throw new \InvalidArgumentException("$type in not valid.");
 				break;
 		}
+	}
+	protected function destroyProduct(string $type): ProductInterface
+	{
+
 	}
 }
